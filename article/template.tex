@@ -1,0 +1,108 @@
+
+\newcommand{\doctitle}{Title}
+
+\documentclass[twocolumn]{article}
+
+\usepackage{amsmath}        % for \text
+\usepackage[english]{babel} % language selection
+\usepackage{amsfonts}       % for \mathbb
+
+% for formatting figure captions
+\usepackage[margin=10pt,font={sf},labelfont=bf]%
+           {caption}        % for formatting figure captions
+
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{natbib}
+\usepackage{tikz}
+\usepackage{times}
+\usepackage{vmargin}
+\usepackage{xcolor}
+
+\usepackage[colorlinks=true,citecolor=blue,hyperfootnotes=false]
+           {hyperref} % This must be the last package.
+
+\selectlanguage{english} % Configure babel.
+
+% vmargin setup
+\setpapersize{USletter}
+\setmarginsrb%
+{0.375in}%           left
+{0.375in}%           top
+{0.375in}%           right
+{0.5in}%             bottom
+{2\baselineskip}%    headheight
+{2\baselineskip}%    headsep
+{3\baselineskip}%    footheight
+{4\baselineskip}%    footskip
+
+% mydate macro
+\newcommand{\mydate}{%
+   \number\year\space%
+   \ifcase\month\or%
+      Jan\or\ Feb\or\ Mar\or\ Apr\or\ May\or\ Jun\or%
+      Jul\or\ Aug\or\ Sep\or\ Oct\or\ Nov\or\ Dec
+   \fi\space%
+   \number\day%
+}
+
+% fancyhdr settings
+\pagestyle{fancy}
+\lhead{\sffamily\textbf{\doctitle}}
+\chead{}
+\rhead{\sffamily \thepage~of~\pageref{LastPage}}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\lfoot{%
+   \footnotesize\sffamily
+   \begin{minipage}{0.95\textwidth}
+   Copyright\ \copyright\ \ 2014\ \ Thomas E.\ Vaughan.
+   PDF image generated on \mydate.
+   Permission is granted to copy, distribute and/or modify this document under
+   the terms of the GNU Free Documentation License, Version 1.3 or any later
+   version published by the Free Software Foundation; with no Invariant
+   Sections, no Front-Cover Texts, and no Back-Cover Texts.  A copy of the
+   license is included in the section entitled ``GNU Free Documentation
+   License''.
+   \end{minipage}%
+}
+\cfoot{}
+\rfoot{%
+   \begin{minipage}{0.05\textwidth}
+   \begin{flushright}
+   \includegraphics[width=0.85\textwidth]{logo}
+   \end{flushright}
+   \end{minipage}%
+}
+
+\begin{document}
+
+\thispagestyle{fancy}
+
+\begin{abstract}
+
+This is the abstract.
+
+\end{abstract}
+
+\section{Introduction}
+
+This is some text.
+
+\bibliographystyle{plainnat}
+
+\begin{thebibliography}{}
+
+\bibitem[LastName1 et al.(Year)LastName1, LastName2, and LastName3]{CiteTag}
+LastName1, Initials1, Initials2 LastName2, and Initials3 LastName3\ \
+``Title of Article''\ \ {\it Title of Journal}, {\bf Volume}: Pages, Year.
+
+\end{thebibliography}
+
+\newpage
+
+\input{fdl-1.3}
+
+\end{document}
+
