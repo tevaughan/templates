@@ -1,4 +1,7 @@
 templates
 =========
 
-Templates, initially one for each of an article and a book.
+Templates for various things. At the moment:
+ - Initial directory for a LaTeX article.
+ - Makefile with automatic generation of dependencies for C or C++ project.
+
